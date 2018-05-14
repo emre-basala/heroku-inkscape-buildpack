@@ -31,11 +31,10 @@ wget https://inkscape.org/en/gallery/item/11254/inkscape-0.92.2.tar.bz2
 tar -xvjf inkscape-0.92.2.tar.bz2
 cd inkscape-0.92.2
 
-mkdir build
-cd build
-cmake ..
-make
-make install
+  ./autogen.sh   # Optional, use if configure doesn't exist
+  ./configure  --disable-lcms
+  make
+  make install
 
 # export PATH="$BUILD_DIR/.inkscape/inkscape-0.91/bin":$PATH
 
