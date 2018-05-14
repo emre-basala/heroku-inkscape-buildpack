@@ -3,24 +3,25 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 mkdir -p "$BUILD_DIR/.intltool"
 cd "$BUILD_DIR/.intltool"
-# wget https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
-# tar -xf intltool-0.51.0.tar.gz
-# cd intltool-0.51.0
-# ./configure
-# make
-
-
-curl http://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.6.tar.gz -o intltool.tar.gz
-# Unzip
-tar -xvf intltool.tar.gz
-# Get into intltool folder
-cd intltool-0.40.6
-# Configure build
+wget https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+tar -xf intltool-0.51.0.tar.gz
+cd intltool-0.51.0
 ./configure
-# Make intltool
 make
-# Install intltool
+
 make install
+
+# curl http://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.6.tar.gz -o intltool.tar.gz
+# # Unzip
+# tar -xvf intltool.tar.gz
+# # Get into intltool folder
+# cd intltool-0.40.6
+# # Configure build
+# ./configure
+# # Make intltool
+# make
+# # Install intltool
+# make install
 
 # inkscape
 mkdir -p "$BUILD_DIR/.inkscape/"
@@ -31,10 +32,10 @@ wget https://inkscape.org/en/gallery/item/11254/inkscape-0.92.2.tar.bz2
 tar -xvjf inkscape-0.92.2.tar.bz2
 cd inkscape-0.92.2
 
-  ./autogen.sh   # Optional, use if configure doesn't exist
-  ./configure  --disable-lcms
-  make
-  make install
+./autogen.sh   # Optional, use if configure doesn't exist
+./configure  --disable-lcms
+make
+make install
 
 # export PATH="$BUILD_DIR/.inkscape/inkscape-0.91/bin":$PATH
 
